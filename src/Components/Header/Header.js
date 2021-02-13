@@ -19,7 +19,7 @@ export const Header = () => {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h5" noWrap>
                         Covid-19 Tracker
                     </Typography>
                 </Toolbar>
