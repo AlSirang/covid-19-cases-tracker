@@ -5,7 +5,7 @@
     color: #095809;
 }
 .deaths{
-    color: red;
+    color: #ff0000;
 }
 .confirmed, .recovered, .deaths{
     text-transform: capitalize;

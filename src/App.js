@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Grid, Paper } from "@material-ui/core";
-
+import { Chart } from "./Components/Chart/Chart";
 import { Header } from "./Components/Header/Header";
 import { Card } from "./Components/Card/Card";
 import { Title } from "./Components/Title/Title";
@@ -44,7 +44,9 @@ const App = () => {
                     ))}
                 </Grid>
                 <Grid item xs={12} sm={8}>
-                    <Paper> xs=8</Paper>
+                    <Paper>
+                        <Chart />
+                    </Paper>
                 </Grid>
             </Grid>
         </>
