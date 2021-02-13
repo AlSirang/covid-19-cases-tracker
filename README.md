@@ -1,10 +1,27 @@
 # Getting Started with Create React App
+# ScreenShots of Website
+## Desktop View
+<details>
+<summary>Click to See Image!</summary>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Desktop View](./img1.png)
 
-## Available Scripts
+</details>
 
-In the project directory, you can run:
+## Mobile View
+
+<details>
+<summary>Click to See Image!</summary>
+
+![Mobile View](./img2.png)
+
+</details>
+
+## Mobile View
+<details>
+
+## Mobile View
+<details>
 
 ### `yarn start`
 
