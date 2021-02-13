@@ -8,7 +8,6 @@
     color: #ff0000;
 }
 .confirmed, .recovered, .deaths{
-    text-transform: capitalize;
     font-size: 2rem !important;
     font-weight: 500 !important;
 }
@@ -16,7 +15,7 @@
     margin: 10px;
     text-align: center;
     padding: 20px;
-
+    text-transform: capitalize;
 }
 .card-style:first-child{
     margin-top: 0;
