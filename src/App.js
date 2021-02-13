@@ -8,30 +8,48 @@ import { fetchData } from "./apiCalls";
 
 const App = () => {
     const [data, setData] = useState([]);
+    const [country, setCountry] = useState("");
     useEffect(() => {
         (async () => {
-            const {
-                confirmed,
-                recovered,
-                deaths,
-                lastUpdate,
-            } = await fetchData();
+            let res = "";
+            if (country) {
+                try {
+                    res = await fetchData("countries", country);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            } else {
+                res = await fetchData();
+            }
 
-            setData([
-                { name: "confirmed", count: confirmed.value, lastUpdate },
-                { name: "recovered", count: recovered.value, lastUpdate },
-                { name: "deaths", count: deaths.value, lastUpdate },
-            ]);
+            if (res.confirmed) {
+                const { confirmed, recovered, deaths, lastUpdate } = res;
+                setData([
+                    { name: "confirmed", count: confirmed.value, lastUpdate },
+                    { name: "recovered", count: recovered.value, lastUpdate },
+                    { name: "deaths", count: deaths.value, lastUpdate },
+                ]);
+            } else {
+                setData({ message: res.error.message });
+            }
         })();
-    }, []);
+    }, [country]);
+
+    const handleCountrySubmit = (countryName) => {
+        setCountry(countryName);
+    };
+
+    if (data.message) {
+        return <p>{data.message}</p>;
+    }
     if (!data.length) {
         return <p>Loading Data.....</p>;
     }
+
     return (
         <>
-            <Header />
-            <Title name="Global" />
-
+            <Header handleCountry={handleCountrySubmit} />
+            <Title name={country ? country : "Global"} />
             <Grid container>
                 <Grid item xs={12} sm={4}>
                     {data.map((d, i) => (
@@ -45,7 +63,7 @@ const App = () => {
                 </Grid>
                 <Grid item xs={12} sm={8}>
                     <Paper>
-                        <Chart />
+                        <Chart c={country} Data={data} />
                     </Paper>
                 </Grid>
             </Grid>
