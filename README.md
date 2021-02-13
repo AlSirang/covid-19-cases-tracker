@@ -17,11 +17,6 @@
 
 </details>
 
-## Mobile View
-<details>
-
-## Mobile View
-<details>
 
 ### `yarn start`
 
