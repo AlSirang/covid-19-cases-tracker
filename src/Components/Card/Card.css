@@ -1,0 +1,23 @@
+.confirmed{
+    color: #3131ad;
+}
+.recovered{
+    color: #095809;
+}
+.deaths{
+    color: red;
+}
+.confirmed, .recovered, .deaths{
+    text-transform: capitalize;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+}
+.card-style{
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+
+}
+.card-style:first-child{
+    margin-top: 0;
+}
